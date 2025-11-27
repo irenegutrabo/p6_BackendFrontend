@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+@Entity
 public class Ciclo {
     @Id 
     private Long id;    

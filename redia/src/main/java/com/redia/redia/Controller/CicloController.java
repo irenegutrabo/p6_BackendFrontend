@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,10 +37,10 @@ public class CicloController {
     }
 
     //Actualizar ciclo
-    @PostMapping("/ciclo")
+    @PutMapping("/ciclo")
     public ResponseEntity<?> actualizarCiclo (@RequestBody Ciclo c){
         try{
-            cicloService.actualizarCiclo(id, c);
+            cicloService.actualizarCiclo(c);
             return ResponseEntity.ok().body("El ciclo se ha actualizado");
         } catch(Exception e){
             e.printStackTrace();

@@ -18,7 +18,7 @@ public class CicloService {
 
     //Crear un nuevo ciclo
     public Ciclo addCiclo (Ciclo ciclo){
-        return RepositoryCiclo.saveAllAndFlush(ciclo);
+        return RepositoryCiclo.saveAndFlush(ciclo);
     }
 
     public void eliminarCiclo (Long id){
