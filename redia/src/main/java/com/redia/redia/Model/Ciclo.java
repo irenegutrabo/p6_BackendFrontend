@@ -1,20 +1,13 @@
-package com.redia.redia.model;
+package com.redia.redia.Model;
+
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 public class Ciclo {
     @Id 
-    private Long id;
-    private int Duracion;
-    private DateTime FechaInicio;
-    private DateTime FechaFinal;
-    private String FaseActual;
-    private String EstadoConexion;
-    private String Sintomas;
-    private String Observaciones;
-
-    
+    private Long id;    
     public Long getId() {
         return id;
     }
@@ -22,6 +15,7 @@ public class Ciclo {
         this.id = id;
     }
 
+    private int Duracion;
     public int getDuracion() {
         return Duracion;
     }
@@ -29,19 +23,62 @@ public class Ciclo {
         this.Duracion = Duracion;
     }
 
-    public DateTime getFechaInicio() {
+    private LocalDateTime FechaInicio;
+    public LocalDateTime getFechaInicio() {
         return FechaInicio;
     }
-    public void setFechaInicio(DateTime FechaInicio) {
+    public void setFechaInicio(LocalDateTime FechaInicio) {
         this.FechaInicio = FechaInicio;
     }
 
-    public DateTime getFechaFinal() {
+    private LocalDateTime FechaFinal;
+    public LocalDateTime getFechaFinal() {
         return FechaFinal;
     }
-    public void setFechaFinal(DateTime FechaFinal) {
+    public void setFechaFinal(LocalDateTime FechaFinal) {
         this.FechaFinal = FechaFinal;
     }
+
+    private String FaseActual;
+    public String getFaseActual() {
+        return FaseActual;
+    }
+    public void setFaseActual(String faseActual) {
+        FaseActual = faseActual;
+    }
+
+    private String EstadoConexion;
+    public String getEstadoConexion() {
+        return EstadoConexion;
+    }
+    public void setEstadoConexion(String estadoConexion) {
+        EstadoConexion = estadoConexion;
+    }
+
+    private String Sintomas;
+    public String getSintomas() {
+        return Sintomas;
+    }
+    public void setSintomas(String sintomas) {
+        Sintomas = sintomas;
+    }
+
+    private String Observaciones;
+
+    
+    public String getObservaciones() {
+        return Observaciones;
+    }
+    public void setObservaciones(String observaciones) {
+        Observaciones = observaciones;
+    }
+
+
+  
+
+
+
+    
 
     
 

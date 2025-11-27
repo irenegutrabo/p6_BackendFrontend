@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,24 +20,45 @@ public class CicloController {
 
     // Devuelve todos los cascos
     @GetMapping("/ciclo")  //consumes = (mediaType.APPLICATION_JSON)
-    public List<Ciclo> getAllTelemetrias(){
-        return cicloService.getAlTelemetrias();
+    public List<Ciclo> getAllCiclos(){
+        return cicloService.getAllCiclos();
     }
 
-    @PostMapping("/telemetria")
-    public ResponseEntity<?> addTelemetria (@RequestBody Telemetria t){  //? para no especificar un tipo específico
+    @PostMapping("/ciclo")
+    public ResponseEntity<?> addCiclo (@RequestBody Ciclo c){  //? para no especificar un tipo específico
         try{
-            telemetriaService.addTelemetria(t);
-            return ResponseEntity.ok().body("La telemetría se ha añadido");
+            cicloService.addCiclo(c);
+            return ResponseEntity.ok().body("El ciclo se ha añadido");
         } catch(Exception e){
             e.printStackTrace();
-            return ResponseEntity.internalServerError().body("La telemetría ya existe");
+            return ResponseEntity.internalServerError().body("El ciclo ya existe");
         }
     }
 
-    // Eliminar casco por Id
+    //Actualizar ciclo
+    @PostMapping("/ciclo")
+    public ResponseEntity<?> actualizarCiclo (@RequestBody Ciclo c){
+        try{
+            cicloService.actualizarCiclo(id, c);
+            return ResponseEntity.ok().body("El ciclo se ha actualizado");
+        } catch(Exception e){
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().body("El ciclo no existe");
+        }
+    }
+
+
+    // Eliminar Ciclo por Id
     @DeleteMapping("/ciclo{id}")
-    public ResponseEntity 
+    public ResponseEntity<?> eliminarCiclo (@RequestBody Long id){
+        try{
+            cicloService.eliminarCiclo(id);
+            return ResponseEntity.ok().body("El ciclo se ha eliminado");
+        } catch(Exception e){
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().body("El ciclo no existe");
+        }
+    }
 
     
 
