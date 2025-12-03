@@ -21,6 +21,7 @@ public class CicloService {
         return RepositoryCiclo.saveAndFlush(ciclo);
     }
 
+    //Eliminar ciclo 
     public void eliminarCiclo (Long id){
         RepositoryCiclo.deleteById(id);
     }

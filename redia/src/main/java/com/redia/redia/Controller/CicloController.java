@@ -19,12 +19,13 @@ public class CicloController {
     @Autowired
     private CicloService cicloService;
 
-    // Devuelve todos los cascos
+    // Devuelve todos los ciclos
     @GetMapping("/ciclo")  //consumes = (mediaType.APPLICATION_JSON)
     public List<Ciclo> getAllCiclos(){
         return cicloService.getAllCiclos();
     }
 
+    // Crear un nuevo ciclo
     @PostMapping("/ciclo")
     public ResponseEntity<?> addCiclo (@RequestBody Ciclo c){  //? para no especificar un tipo específico
         try{
@@ -36,7 +37,7 @@ public class CicloController {
         }
     }
 
-    //Actualizar ciclo
+    // Actualizar ciclo
     @PutMapping("/ciclo")
     public ResponseEntity<?> actualizarCiclo (@RequestBody Ciclo c){
         try{
@@ -48,8 +49,7 @@ public class CicloController {
         }
     }
 
-
-    // Eliminar Ciclo por Id
+    // Eliminar Ciclo 
     @DeleteMapping("/ciclo{id}")
     public ResponseEntity<?> eliminarCiclo (@RequestBody Long id){
         try{
@@ -60,7 +60,4 @@ public class CicloController {
             return ResponseEntity.internalServerError().body("El ciclo no existe");
         }
     }
-
-    
-
 }
