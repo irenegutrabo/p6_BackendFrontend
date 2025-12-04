@@ -1,0 +1,19 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Anyadir Ciclo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="ciclo.css" rel="stylesheet"/>
+</head>
+   
+<body>
+	<h1>Anyadir Ciclo</h1>
+ 
+    <form th:action="@{/ciclo}" th:object="${ciclo}" th:method="post">
+    	<p>CCC: <input type="text" th:field="${ciclo.ccc}" /></p>
+        <p>Balance: <input type="text" th:field="${ciclo.balance}" /></p>
+        <p><input class="boton" type="submit" value="Crear Ciclo" /> 
+        <input  class="boton" type="reset" value="Reset" /></p>
+    </form>
+    <a th:href="@{/}">Atrás</a>
+</body>
+</html>
