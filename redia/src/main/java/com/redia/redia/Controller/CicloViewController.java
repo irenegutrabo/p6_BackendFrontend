@@ -15,20 +15,20 @@ public class CicloViewController {
     @Autowired
     private CicloService cicloService;
 
-    /*---Devuelve el formulario de index de cuentas---*/
+    /*---Devuelve el formulario de index de ciclos---*/
 	@GetMapping("/")
 	public String indexCicloView() {
 		return "indexCiclo";
 	}
 
-    /*---Devuelve el formulario para anyadir una nueva cuenta con una cuenta vacia---*/
+    /*---Devuelve el formulario para anyadir un nuevo ciclo con un ciclo vacio---*/
 	@GetMapping("/addCiclo")
 	public String addCicloView(Model model) {
 		model.addAttribute("ciclo", new Ciclo());
 		return "addCiclo";
 	}
 
-    /*---Devuelve el formulario para listar las cuentas del sistema---*/
+    /*---Devuelve el formulario para listar los ciclos del sistema---*/
 	@GetMapping("/listCiclo")
 	public String listCicloView(Model model) {
 		
@@ -37,7 +37,7 @@ public class CicloViewController {
 		return "listCiclo";
 	}
 
-    /*---Devuelve el formulario para editar una Cuenta---*/
+    /*---Devuelve el formulario para editar una ciclo---*/
 	@GetMapping("/editCiclo/{id}")
 	public String editCicloView(@PathVariable("id") Long id, Model model) {
 
