@@ -30,7 +30,7 @@
 Command Line: --add-modules=ALL-SYSTEM --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\Users\esbel\.vscode\extensions\redhat.java-1.50.0-win32-x64\lombok\lombok-1.18.39-4050.jar -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=c:\Users\esbel\AppData\Roaming\Code\User\workspaceStorage\2550d70c402934654af22b421e6496ea\redhat.java -Daether.dependencyCollector.impl=bf c:\Users\esbel\.vscode\extensions\redhat.java-1.50.0-win32-x64\server\plugins\org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar -configuration c:\Users\esbel\AppData\Roaming\Code\User\globalStorage\redhat.java\1.50.0\config_win -data c:\Users\esbel\AppData\Roaming\Code\User\workspaceStorage\2550d70c402934654af22b421e6496ea\redhat.java\jdt_ws --pipe=\\.\pipe\lsp-96c163507c0429b8b0e3daa84cdce8be-sock
 
 Host: AMD Ryzen 7 5800H with Radeon Graphics         , 16 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.7019)
-Time: Thu Nov 27 20:14:21 2025 Hora estándar romance elapsed time: 0.033239 seconds (0d 0h 0m 0s)
+Time: Thu Nov 27 20:14:21 2025 Hora estï¿½ndar romance elapsed time: 0.033239 seconds (0d 0h 0m 0s)
 
 ---------------  T H R E A D  ---------------
 

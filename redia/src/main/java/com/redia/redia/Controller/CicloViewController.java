@@ -31,16 +31,13 @@ public class CicloViewController {
     /*---Devuelve el formulario para listar los ciclos del sistema---*/
 	@GetMapping("/listCiclo")
 	public String listCicloView(Model model) {
-		
 		model.addAttribute("ciclos", cicloService.getAllCiclos());
-		
 		return "listCiclo";
 	}
 
     /*---Devuelve el formulario para editar una ciclo---*/
 	@GetMapping("/editCiclo/{id}")
 	public String editCicloView(@PathVariable("id") Long id, Model model) {
-
 		model.addAttribute("ciclo", cicloService.getCiclo(id));
 		return "updateCiclo";
 	}

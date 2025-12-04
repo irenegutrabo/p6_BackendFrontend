@@ -41,24 +41,24 @@
 					</thead>
 					<tbody>
 						<tr th:each="ciclo : ${ciclos}">
-							<td th:text="${ciclo.id}"></td>
-                            <td th:text="${ciclo.duracion}"></td>
-							<td th:text="${ciclo.fechaInicio}"></td>
-                            <td th:text="${ciclo.fechaFinal}"></td>
-                            <td th:text="${ciclo.faseActual}"></td>
-                            <td th:text="${ciclo.estadoConexion}"></td>
-                            <td th:text="${ciclo.sintomas}"></td>
-                            <td th:text="${ciclo.observaciones}"></td>
+							<td th:text="${ciclo.Id}"></td>
+                            <td th:text="${ciclo.Duracion}"></td>
+							<td th:text="${ciclo.FechaInicio}"></td>
+                            <td th:text="${ciclo.FechaFinal}"></td>
+                            <td th:text="${ciclo.FaseActual}"></td>
+                            <td th:text="${ciclo.EstadoConexion}"></td>
+                            <td th:text="${ciclo.Sintomas}"></td>
+                            <td th:text="${ciclo.Observaciones}"></td>
 							<td>
 								<div class="btn-group">
 									<form th:method="DELETE"
-										th:action="@{/ciclo/{id}(id=${ciclo.id})}">
+										th:action="@{/ciclo/{id}(id=${ciclo.Id})}">
 										<input type="submit" class="delete btn btn-sm btn-danger"
 											value="Eliminar" />
 									</form>
 
 									<form th:method="GET"
-										th:action="@{/editCiclo/{id}(id=${ciclo.id})}">
+										th:action="@{/editCiclo/{id}(id=${ciclo.Id})}">
 										<input type="submit" class="primary btn btn-sm btn-primary" 
 											value="Editar" />
 									</form>

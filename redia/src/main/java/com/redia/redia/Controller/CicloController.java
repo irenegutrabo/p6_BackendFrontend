@@ -7,13 +7,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.redia.redia.Model.Ciclo;
 import com.redia.redia.Model.CicloService;
+import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 public class CicloController {
@@ -28,37 +29,37 @@ public class CicloController {
 
     // Crear un nuevo ciclo
     @PostMapping("/ciclo")
-    public ResponseEntity<?> addCiclo (@RequestBody Ciclo c){  //? para no especificar un tipo específico
+    public ResponseEntity<?> saveCuenta(Ciclo ciclo, HttpServletResponse response){  //? para no especificar un tipo específico
         try{
-            cicloService.addCiclo(c);
+            cicloService.addCiclo(ciclo);
+            response.sendRedirect("/listCiclo");
             return ResponseEntity.ok().body("El ciclo se ha añadido");
         } catch(Exception e){
-            e.printStackTrace();
-            return ResponseEntity.internalServerError().body("El ciclo ya existe");
+            return ResponseEntity.status(500).body("Error creando el ciclo: " + e.getMessage());        
         }
     }
 
     // Actualizar ciclo
     @PutMapping("/ciclo")
-    public ResponseEntity<?> actualizarCiclo (@ModelAttribute Ciclo ciclo,@RequestBody Ciclo c){
+    public ResponseEntity<?> updateCiclo (@ModelAttribute Ciclo ciclo, HttpServletResponse response){
         try{
-            cicloService.actualizarCiclo(c);
+            cicloService.updateCiclo(ciclo);
+            response.sendRedirect("/listCiclo");
             return ResponseEntity.ok().body("El ciclo se ha actualizado");
         } catch(Exception e){
-            e.printStackTrace();
-            return ResponseEntity.internalServerError().body("El ciclo no existe");
+            return ResponseEntity.status(500).body("Error actualizando el ciclo: " + e.getMessage());        
         }
     }
 
     // Eliminar Ciclo 
-    @DeleteMapping("/ciclo{id}")
-    public ResponseEntity<?> eliminarCiclo (@RequestBody Long id){
+    @DeleteMapping("/ciclo/{Id}")
+    public ResponseEntity<?> deleteCiclo (@PathVariable("Id") Long Id, HttpServletResponse response){
         try{
-            cicloService.eliminarCiclo(id);
+            cicloService.removeCicloID(Id);
+            response.sendRedirect("/listCiclo");
             return ResponseEntity.ok().body("El ciclo se ha eliminado");
         } catch(Exception e){
-            e.printStackTrace();
-            return ResponseEntity.internalServerError().body("El ciclo no existe");
+            return ResponseEntity.status(500).body("Error eliminando el ciclo: " + e.getMessage());        
         }
     }
 }

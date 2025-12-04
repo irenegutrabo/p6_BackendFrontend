@@ -1,19 +1,24 @@
 package com.redia.redia.Model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Ciclo {
     @Id 
-    private Long id;    
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long Id;    
     public Long getId() {
-        return id;
+        return Id;
     }
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
     private int Duracion;
@@ -24,19 +29,19 @@ public class Ciclo {
         this.Duracion = Duracion;
     }
 
-    private LocalDateTime FechaInicio;
-    public LocalDateTime getFechaInicio() {
+    private LocalDate FechaInicio;
+    public LocalDate getFechaInicio() {
         return FechaInicio;
     }
-    public void setFechaInicio(LocalDateTime FechaInicio) {
+    public void setFechaInicio(LocalDate FechaInicio) {
         this.FechaInicio = FechaInicio;
     }
 
-    private LocalDateTime FechaFinal;
-    public LocalDateTime getFechaFinal() {
+    private LocalDate FechaFinal;
+    public LocalDate getFechaFinal() {
         return FechaFinal;
     }
-    public void setFechaFinal(LocalDateTime FechaFinal) {
+    public void setFechaFinal(LocalDate FechaFinal) {
         this.FechaFinal = FechaFinal;
     }
 
