@@ -1,0 +1,9 @@
+background-image: url("fondo.jpg"); /* Cambia esto por tu imagen */
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+margin: 0;
+padding: 20px;
+font-family: Arial, sans-serif;
+color: #000;
+text-align: center;
