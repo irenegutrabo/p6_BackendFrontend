@@ -1,12 +1,13 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head> 
-    <title>Anyadir Ciclo</title>
+    <title>Añadir Ciclo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="ciclo.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/configure.css">
+
 </head>
    
 <body>
-	<h1>Anyadir Ciclo</h1>
+	<h1>Añadir Ciclo</h1>
  
     <form th:action="@{/ciclo}" th:object="${ciclo}" th:method="post">
     	<p>ID: <input type="text" th:field="${ciclo.id}" /></p>
