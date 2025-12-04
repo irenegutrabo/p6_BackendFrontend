@@ -65,8 +65,6 @@ public class Ciclo {
     }
 
     private String Observaciones;
-
-    
     public String getObservaciones() {
         return Observaciones;
     }
