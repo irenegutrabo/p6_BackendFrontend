@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width" /
-<title>Editar Ciclo</title>
-<link rel="stylesheet" href="/configure.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>Editar Ciclo</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/configure.css">
 </head>
 <body>
-	    <h1>Editar Ciclo</h1>
-			<form   th:object="${ciclo}"
-				th:action="@{/ciclo}" th:method="put" style="margin: 10px">
+
+    <div class="container" style="margin-top: 20px;">
         
-				<p><label>ID</label> <input type="number"
-									th:field="${ciclo.id}"
-									autofocus="autofocus" readonly placeholder="ID"/></p>
-		
-				<p><label>Duracion</label> <input type="number"
-									th:field="${ciclo.Duracion}"
-									autofocus="autofocus" placeholder="Duracion"/> </p>
-					
-				<p><label>Fecha Inicio</label> <input type="date"
-									th:field="${ciclo.FechaInicio}"
-									autofocus="autofocus" placeholder="Fecha Inicio"  /></p>
+        <div class="panel panel-default">
+            
+            <div class="panel-heading">
+                <strong>Editar Ciclo</strong>
+            </div>
 
-				<p><label>Fecha Final</label> <input type="date"
-									th:field="${ciclo.FechaFinal}"	
-									autofocus="autofocus" placeholder="Fecha Final"  /></p>
-				
-				<p><label>Fase Actual </label> <input type="text"
-									th:field="${ciclo.FaseActual}"
-									autofocus="autofocus" placeholder="Fase Actual"  /></p>
+            <div class="panel-body">
+                <form th:object="${ciclo}" th:action="@{/ciclo}" th:method="put">
+                    
+                    <div class="form-group">
+                        <label>ID:</label>
+                        <input type="number" th:field="*{id}" class="form-control" readonly="readonly" />
+                    </div>
 
-				<p><label>Estado Conexion</label> <input type="text"
-									th:field="${ciclo.EstadoConexion}"	
-									autofocus="autofocus" placeholder="Estado Conexion"  /></p>
+                    <div class="form-group">
+                        <label>Duración:</label>
+                        <input type="number" th:field="*{Duracion}" class="form-control" placeholder="Duración" autofocus="autofocus" />
+                    </div>
 
-				<p><label>Sintomas</label> <input type="text"
-									th:field="${ciclo.Sintomas}"
-									autofocus="autofocus" placeholder="Sintomas"  /></p>
+                    <div class="form-group">
+                        <label>Fecha Inicio:</label>
+                        <input type="date" th:field="*{FechaInicio}" class="form-control" />
+                    </div>
 
-				<p><label>Observaciones</label> <input type="text"
-									th:field="${ciclo.Observaciones}"
-									autofocus="autofocus" placeholder="Observaciones"  /></p>
-			
-				<button type="submit" >Guardar</button>
-					<a th:href="@{/listCiclo}" >Atras</a>
-			</form>
+                    <div class="form-group">
+                        <label>Fecha Final:</label>
+                        <input type="date" th:field="*{FechaFinal}" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fase Actual:</label>
+                        <input type="text" th:field="*{FaseActual}" class="form-control" placeholder="Fase Actual" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Estado Conexión:</label>
+                        <input type="text" th:field="*{EstadoConexion}" class="form-control" placeholder="Estado Conexión" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Síntomas:</label>
+                        <input type="text" th:field="*{Sintomas}" class="form-control" placeholder="Síntomas" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Observaciones:</label>
+                        <input type="text" th:field="*{Observaciones}" class="form-control" placeholder="Observaciones" />
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                    </div>
+                    
+                </form>
+            </div>
+
+            <div class="panel-footer">
+                <a class="btn btn-sm btn-primary" th:href="@{/listCiclo}">Atrás</a>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>

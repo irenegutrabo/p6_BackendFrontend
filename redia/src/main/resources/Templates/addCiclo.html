@@ -1,26 +1,82 @@
-<html xmlns:th="https://www.thymeleaf.org">
-<head> 
-    <title>Añadir Ciclo</title>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="/configure.css">
+    <title>Añadir Ciclo</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/configure.css">
 </head>
-   
 <body>
-	<h1>Añadir Ciclo</h1>
- 
-    <form th:action="@{/ciclo}" th:object="${ciclo}" th:method="post">
-    	<p>ID: <input type="text" th:field="${ciclo.id}" /></p>
-        <p>Duracion: <input type="text" th:field="${ciclo.Duracion}" /></p>
-        <p>Fecha Inicio: <input type="date" th:field="${ciclo.FechaInicio}" /></p>
-        <p>Fecha Final: <input type="date" th:field="${ciclo.FechaFinal}" /></p>
-        <p>Fase Actual: <input type="text" th:field="${ciclo.FaseActual}" /></p>
-        <p>Estado Conexión: <input type="text" th:field="${ciclo.EstadoConexion}" /></p>
-        <p>Síntomas: <input type="text" th:field="${ciclo.Sintomas}" /></p>
-        <p>Observaciones: <input type="text" th:field="${ciclo.Observaciones}" /></p>
-        <p><input class="boton" type="submit" value="Crear Ciclo" /> 
-        <input  class="boton" type="reset" value="Reset" /></p>
-    </form>
-    <a th:href="@{/}">Atrás</a>
+
+    <div class="container" style="margin-top: 20px;">
+        
+        <div class="panel panel-default">
+            
+            <div class="panel-heading">
+                <strong>Añadir Ciclo</strong>
+            </div>
+
+            <div class="panel-body">
+                <form th:action="@{/ciclo}" th:object="${ciclo}" method="post">
+                    
+                    <div class="form-group">
+                        <label>ID:</label>
+                        <input type="text" th:field="${ciclo.id}" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Duración:</label>
+                        <input type="text" th:field="${ciclo.Duracion}" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fecha Inicio:</label>
+                        <input type="date" th:field="${ciclo.FechaInicio}" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fecha Final:</label>
+                        <input type="date" th:field="${ciclo.FechaFinal}" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fase Actual:</label>
+                        <input type="text" th:field="${ciclo.FaseActual}" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Estado Conexión:</label>
+                        <input type="text" th:field="${ciclo.EstadoConexion}" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Síntomas:</label>
+                        <input type="text" th:field="${ciclo.Sintomas}" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Observaciones:</label>
+                        <input type="text" th:field="${ciclo.Observaciones}" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Crear Ciclo" class="btn btn-sm btn-success" />
+                    </div>
+                    
+                </form>
+            </div>
+
+            <div class="panel-footer">
+                <a class="btn btn-sm btn-primary" th:href="@{/listCiclo}">Atrás</a>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
