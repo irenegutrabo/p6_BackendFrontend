@@ -16,13 +16,33 @@
 									th:field="${ciclo.id}"
 									autofocus="autofocus" readonly placeholder="ID"/></p>
 		
-				<p><label>CCC</label> <input type="number"
-									th:field="${ciclo.ccc}"
-									autofocus="autofocus" placeholder="CCC"/> </p>
+				<p><label>Duracion</label> <input type="number"
+									th:field="${ciclo.duracion}"
+									autofocus="autofocus" placeholder="Duracion"/> </p>
 					
-				<p><label>Balance</label> <input type="number"
-									th:field="${ciclo.balance}"
-									autofocus="autofocus" placeholder="Balance"  /></p>
+				<p><label>Fecha Inicio</label> <input type="date"
+									th:field="${ciclo.fechaInicio}"
+									autofocus="autofocus" placeholder="Fecha Inicio"  /></p>
+
+				<p><label>Fecha Final</label> <input type="date"
+									th:field="${ciclo.fechaFin}"	
+									autofocus="autofocus" placeholder="Fecha Final"  /></p>
+				
+				<p><label>Fase Actual </label> <input type="text"
+									th:field="${ciclo.fase}"
+									autofocus="autofocus" placeholder="Fase Actual"  /></p>
+
+				<p><label>Estado</label> <input type="text"
+									th:field="${ciclo.estado}"	
+									autofocus="autofocus" placeholder="Estado"  /></p>
+
+				<p><label>Sintomas</label> <input type="text"
+									th:field="${ciclo.sintomas}"
+									autofocus="autofocus" placeholder="Sintomas"  /></p>
+
+				<p><label>Observaciones</label> <input type="text"
+									th:field="${ciclo.observaciones}"
+									autofocus="autofocus" placeholder="Observaciones"  /></p>
 			
 				<button type="submit" >Guardar</button>
 					<a th:href="@{/listCiclo}" >Atras</a>

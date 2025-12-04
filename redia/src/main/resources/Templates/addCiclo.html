@@ -9,8 +9,14 @@
 	<h1>Anyadir Ciclo</h1>
  
     <form th:action="@{/ciclo}" th:object="${ciclo}" th:method="post">
-    	<p>CCC: <input type="text" th:field="${ciclo.ccc}" /></p>
-        <p>Balance: <input type="text" th:field="${ciclo.balance}" /></p>
+    	<p>ID: <input type="text" th:field="${ciclo.id}" /></p>
+        <p>Duracion: <input type="text" th:field="${ciclo.duracion}" /></p>
+        <p>Fecha Inicio: <input type="date" th:field="${ciclo.fechaInicio}" /></p>
+        <p>Fecha Final: <input type="date" th:field="${ciclo.fechaFinal}" /></p>
+        <p>Fase Actual: <input type="text" th:field="${ciclo.faseActual}" /></p>
+        <p>Estado Conexión: <input type="text" th:field="${ciclo.estadoConexion}" /></p>
+        <p>Síntomas: <input type="text" th:field="${ciclo.sintomas}" /></p>
+        <p>Observaciones: <input type="text" th:field="${ciclo.observaciones}" /></p>
         <p><input class="boton" type="submit" value="Crear Ciclo" /> 
         <input  class="boton" type="reset" value="Reset" /></p>
     </form>
