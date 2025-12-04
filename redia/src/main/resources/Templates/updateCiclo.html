@@ -4,8 +4,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width" /
 <title>Editar Ciclo</title>
+<link rel="stylesheet" href="/configure.css">
 </head>
 <body>
 	    <h1>Editar Ciclo</h1>
@@ -21,27 +22,27 @@
 									autofocus="autofocus" placeholder="Duracion"/> </p>
 					
 				<p><label>Fecha Inicio</label> <input type="date"
-									th:field="${ciclo.fechaInicio}"
+									th:field="${ciclo.FechaInicio}"
 									autofocus="autofocus" placeholder="Fecha Inicio"  /></p>
 
 				<p><label>Fecha Final</label> <input type="date"
-									th:field="${ciclo.fechaFin}"	
+									th:field="${ciclo.FechaFinal}"	
 									autofocus="autofocus" placeholder="Fecha Final"  /></p>
 				
 				<p><label>Fase Actual </label> <input type="text"
-									th:field="${ciclo.fase}"
+									th:field="${ciclo.FaseActual}"
 									autofocus="autofocus" placeholder="Fase Actual"  /></p>
 
-				<p><label>Estado</label> <input type="text"
-									th:field="${ciclo.estado}"	
-									autofocus="autofocus" placeholder="Estado"  /></p>
+				<p><label>Estado Conexion</label> <input type="text"
+									th:field="${ciclo.EstadoConexion}"	
+									autofocus="autofocus" placeholder="Estado Conexion"  /></p>
 
 				<p><label>Sintomas</label> <input type="text"
-									th:field="${ciclo.sintomas}"
+									th:field="${ciclo.Sintomas}"
 									autofocus="autofocus" placeholder="Sintomas"  /></p>
 
 				<p><label>Observaciones</label> <input type="text"
-									th:field="${ciclo.observaciones}"
+									th:field="${ciclo.Observaciones}"
 									autofocus="autofocus" placeholder="Observaciones"  /></p>
 			
 				<button type="submit" >Guardar</button>
