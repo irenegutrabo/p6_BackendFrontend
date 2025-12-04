@@ -16,6 +16,10 @@ public class CicloService {
         return RepositoryCiclo.findAll();
     }
 
+    public Ciclo getCiclo(Long id){
+        return RepositoryCiclo.findById(id).orElseThrow(() -> new RuntimeException("Ciclo no encontrado"));
+    }
+
     //Crear un nuevo ciclo
     public Ciclo addCiclo (Ciclo ciclo){
         return RepositoryCiclo.saveAndFlush(ciclo);
