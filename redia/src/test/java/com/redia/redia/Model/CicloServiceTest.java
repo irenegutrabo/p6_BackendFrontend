@@ -139,6 +139,34 @@ public class CicloServiceTest {
         verify(repositoryCiclo).findById(1L);
         verify(repositoryCiclo, never()).save(ciclo);
     }
+    
+    @Test
+    @DisplayName("Comprueba que se elimina el ciclo correctamente pasando el objeto ciclo")
+    public void deleteCiclo_objetoCiclo_llamadaAlRepositorio() {
+        // Arrange: Creamos el objeto que vamos a pasar
+        Ciclo ciclo = new Ciclo();
+        ciclo.setId(1L);
+        ciclo.setFaseActual("Folicular");
+
+        // Act: Llamamos al método exacto de tu Service
+        cicloService.deleteCiclo(ciclo);
+
+        // Assert: Verificamos que el Service realmente le pasó el objeto al Repository
+        verify(repositoryCiclo).delete(ciclo);
+    }
+
+    @Test
+    @DisplayName("Comprueba que no se puede eliminar un ciclo a traves del objeto ciclo si el id es null")
+    public void removeCiclo_cicloIdNull_lanzaExcepcion() {
+        // Arrange
+        Ciclo ciclo = new Ciclo();
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> {
+            cicloService.removeCiclo(ciclo);
+        });
+        verify(repositoryCiclo, never()).delete(ciclo);
+    }
 
     @Test
     @DisplayName("Comprueba que no se puede eliminar un ciclo a traves del objeto ciclo que no existe")

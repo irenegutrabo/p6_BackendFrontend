@@ -45,20 +45,20 @@ public class CicloService {
     }
 
     public void removeCiclo(Ciclo ciclo) {
-        if (!RepositoryCiclo.existsById(ciclo.getId())) {
-            throw new IllegalArgumentException("Ciclo not found: " + ciclo.getId());
+        if (ciclo.getId() == null || !RepositoryCiclo.existsById(ciclo.getId())) {
+        throw new IllegalArgumentException("No se puede eliminar: el ciclo no existe o el ID es nulo");
         }
         RepositoryCiclo.delete(ciclo);
     }
 
     public void removeCicloID(Long id) {
-        if (!RepositoryCiclo.existsById(id)) {
-            throw new IllegalArgumentException("Ciclo not found: " + id);
-        }
-        RepositoryCiclo.deleteById(id);
+    if (id == null) {
+        throw new IllegalArgumentException("El id no puede ser null");
     }
-
-    public Object getAllCiclos(Long id) {
-        throw new UnsupportedOperationException("Unimplemented method 'getAllCuentas'");
+    if (!RepositoryCiclo.existsById(id)) {
+        throw new IllegalArgumentException("Ciclo not found: " + id);
     }
+    RepositoryCiclo.deleteById(id);
+}
+   
 }
