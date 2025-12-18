@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./redia  # <--- Pon aquí el nombre de tu carpeta
+        working-directory: ./C:\Users\ireen\OneDrive\Escritorio\3\SOFTWARE\p6_backend\redia
 
     steps:
     - uses: actions/checkout@v4
