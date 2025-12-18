@@ -17,7 +17,7 @@ public class Ciclo {
     public Long getId() {
         return Id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.Id = id;
     }
 

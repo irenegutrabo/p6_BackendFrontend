@@ -17,7 +17,8 @@ public class CicloService {
     }
 
     public Ciclo getCiclo(Long id){
-        return RepositoryCiclo.getReferenceById(id);
+        return RepositoryCiclo.findById(id).orElseThrow(() -> new IllegalArgumentException("Ciclo no encontrado" + id));
+
     }
     
     //Crear un nuevo ciclo
@@ -31,8 +32,8 @@ public class CicloService {
     }
 
     //Actualizar ciclo
-    public void updateCiclo(Ciclo c){
-        Ciclo cicloExistente = RepositoryCiclo.findById(c.getId()).orElseThrow(() -> new RuntimeException("Ciclo no encontrado"));
+    public Ciclo updateCiclo(Ciclo c){
+        Ciclo cicloExistente = getCiclo(c.getId());
         cicloExistente.setDuracion(c.getDuracion());
         cicloExistente.setFechaInicio(c.getFechaInicio());
         cicloExistente.setFechaFinal(c.getFechaFinal());
@@ -40,14 +41,20 @@ public class CicloService {
         cicloExistente.setEstadoConexion(c.getEstadoConexion());
         cicloExistente.setSintomas(c.getSintomas());
         cicloExistente.setObservaciones(c.getObservaciones());
-        RepositoryCiclo.save(cicloExistente);
+        return RepositoryCiclo.save(cicloExistente);
     }
 
     public void removeCiclo(Ciclo ciclo) {
+        if (!RepositoryCiclo.existsById(ciclo.getId())) {
+            throw new IllegalArgumentException("Ciclo not found: " + ciclo.getId());
+        }
         RepositoryCiclo.delete(ciclo);
     }
 
     public void removeCicloID(Long id) {
+        if (!RepositoryCiclo.existsById(id)) {
+            throw new IllegalArgumentException("Ciclo not found: " + id);
+        }
         RepositoryCiclo.deleteById(id);
     }
 
