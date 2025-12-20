@@ -8,24 +8,18 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        # AQUÍ ESTABA EL ERROR:
-        # 1. Quitamos el nombre del repositorio (GitHub ya está dentro)
-        # 2. Usamos la carpeta del proyecto 'redia'
-        working-directory: redia  
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 17
+
+    # ESTE ES EL PASO CLAVE
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
-        
+        java-version: '21'
+        distribution: 'temurin' # Puedes usar 'zulu' o 'corretto' también
+        cache: 'maven'
+
     - name: Build with Maven
-      # Como ya definimos el working-directory arriba, aquí solo ponemos el comando simple
-      run: mvn -B package
+      run: mvn -B compile
